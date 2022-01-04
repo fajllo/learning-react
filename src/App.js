@@ -1,11 +1,9 @@
-
-import Game from "./Game";
+import Rolldice from "./Rolldice";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-red-300 text-4xl"> Game</h1>
-      <Game />
+    <div className="App flex flex-col items-center mt-8">
+      <Rolldice />
     </div>
   );
 }
