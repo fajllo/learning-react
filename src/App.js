@@ -1,9 +1,10 @@
-import logo from "./logo.svg";
+import Pokedex from "./Pokedex";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-red-300 text-4xl"> hello</h1>
+    <div className="App flex   w-screen  flex-col items-center">
+      <h1 className="text-green-500 text-4xl"> Pokedex</h1>
+      <Pokedex />
     </div>
   );
 }
