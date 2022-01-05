@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import Lottery from "./Lottery";
+import Flipper from "./Flipper";
 
 function App() {
   return (
     <div>
-      <Lottery />
-      <Lottery title="mini lottery" maxNum={10} numBals={3} />
+      <Flipper />
     </div>
   );
 }
