@@ -15,7 +15,7 @@ class Lottery extends Component {
   };
   render() {
     return (
-      <div className="Lottery flex flex-col items-center">
+      <div className="Lottery flex flex-col items-center border-black border m-2 rounded-3xl">
         <h1 className="text-6xl text-green-400 m-2">{this.props.title}</h1>
         <div className="flex">
           {this.state.nums.map(num => (
