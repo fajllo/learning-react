@@ -1,11 +1,16 @@
-import logo from "./logo.svg";
+import * as React from 'react'
+
+// 1. import `ChakraProvider` component
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
+  // 2. Wrap ChakraProvider at the root of your app
   return (
-    <div>
-      <h1 className="text-red-300 text-4xl"> hello</h1>
-    </div>
-  );
+    <ChakraProvider>
+      <App />
+    </ChakraProvider>
+  )
 }
 
 export default App;
+// ;……
