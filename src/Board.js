@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import Cell from "./Cell";
 
-
-
 class Board extends Component {
   constructor(props) {
     super(props);
-
-   
   }
   state = {
     hasWon: false,
@@ -50,15 +46,38 @@ class Board extends Component {
     flipCell(y, x + 1);
     flipCell(y, x - 1);
 
+    let hasWon = board.every(row => row.every(cell => !cell));
 
-    let hasWon = false;
-
-    this.setState({ board, hasWon }); 
+    this.setState({ board, hasWon });
   }
+
+  handleClick = () => {
+    this.setState({ hasWon: false, board: this.createBoard() });
+  };
 
   /** Render game board or winning message. */
 
   render() {
+    if (this.state.hasWon) {
+      return (
+        <div className="Board">
+          <h1 className="mb-9">
+            <span className="text-orange-300 text-8xl"> you_</span>
+            <span className="text-8xl text-violet-300">_won!</span>
+          </h1>
+          <button className="relative" onClick={this.handleClick}>
+            <div className="absolute inset-x-0 h-full -bottom-1 -right-1 px-12 py-2 bg-violet-300 border "></div>
+            <div className="relative px-12 py-2 bg-orange-300 border ">
+              <h1 className="text-violet-800">
+                <span className=" text-2xl"> play_</span>
+                <span className="text-2xl ">_again</span>
+              </h1>
+            </div>
+          </button>
+        </div>
+      );
+    }
+
     let tBoard = [];
     for (let y = 0; y < this.props.nrows; y++) {
       let row = [];
@@ -77,16 +96,16 @@ class Board extends Component {
       tBoard.push(<tr>{row}</tr>);
     }
     return (
-      <div className="Board ">
+      <div className="Board mx-auto">
+        <h1 className="mb-9 self-center ">
+          <span className="text-orange-300 text-8xl"> lights_</span>
+          <span className="text-8xl text-violet-300">_out</span>
+        </h1>
         <table className="">
           <tbody>{tBoard}</tbody>
         </table>
       </div>
     );
-    // if the game is won, just show a winning msg & render nothing else
-    // TODO
-    // make table board
-    // TODO
   }
 }
 Board.defaultProps = {
