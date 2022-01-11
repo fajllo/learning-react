@@ -1,7 +1,10 @@
+import Board from "./Board";
 function App() {
   return (
-    <div>
-      <h1 className="text-red-300 text-4xl"> hello</h1>
+    <div className="App flex w-screen flex-col items-center bg-gray-700 min-h-screen">
+      <div className=" mt-10 flex flex-col items-center">
+        <Board key={1} />
+      </div>
     </div>
   );
 }
