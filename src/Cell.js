@@ -26,7 +26,8 @@ class Cell extends Component {
 
   render() {
     let classes =
-      "Cell   h-80 w-80 " + (this.props.isLit ? " bg-teal-300" : "bg-gray-900");
+      "Cell   h-48 w-48 border border-black " +
+      (this.props.isLit ? " bg-teal-300" : "bg-gray-900");
 
     return <td className={classes} onClick={this.handleClick} />;
   }
