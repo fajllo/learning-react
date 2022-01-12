@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 export default class Todo extends Component {
+  handleRemove = evt => {
+    this.props.remove(this.props.id);
+  };
   render() {
     return (
       <div className=" Todo flex gap-2 w-full justify-around">
@@ -10,7 +13,10 @@ export default class Todo extends Component {
           <button className="text-white bg-black py-2 px-4 m-2 rounded-lg">
             edit
           </button>
-          <button className="text-white bg-red-600 p-2 m-2 rounded-lg">
+          <button
+            className="text-white bg-red-600 p-2 m-2 rounded-lg"
+            onClick={this.handleRemove}
+          >
             delete
           </button>
         </div>
