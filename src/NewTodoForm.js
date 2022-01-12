@@ -1,11 +1,36 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class NewTodoForm extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+  state = { task: "" };
+  handleChange = evt => {
+    this.setState({ [evt.target.name]: evt.target.value });
+  };
+  handleSubmit = evt => {
+    evt.preventDefault();
+    this.props.addTodo(this.state);
+    this.setState({ task: "" });
+  };
+
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="task" className="mr-2">
+            New todo:
+          </label>
+          <input
+            type="text"
+            id="task "
+            name="task"
+            placeholder="add newt todo..."
+            value={this.state.task}
+            onChange={this.handleChange}
+          />
+          <button className="text-white bg-green-600 p-2 m-2 rounded-lg">
+            add
+          </button>
+        </form>
+      </div>
+    );
+  }
 }
