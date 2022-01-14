@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 export default class Todo extends Component {
-  state = { editing: false, task: this.props.task };
+  state = { editing: false, task: this.props.task, completed: false };
   handleRemove = evt => {
     this.props.remove(this.props.id);
   };
@@ -14,6 +14,9 @@ export default class Todo extends Component {
   toggleForm = () => {
     this.setState({ editing: !this.state.editing });
   };
+  toggleComplete = () => {
+    this.setState({ completed: !this.state.completed });
+  };
   handleChange = evt => {
     this.setState({ [evt.target.name]: evt.target.value });
   };
@@ -23,7 +26,17 @@ export default class Todo extends Component {
       result = (
         <div className="flex justify-between">
           {" "}
-          <li className="py-2 m-2"> {this.props.task}</li>
+          <li
+            onClick={this.toggleComplete}
+            className={
+              this.state.completed
+                ? "py-2 m-2 line-through text-gray-300 "
+                : "py-2 m-2 "
+            }
+          >
+            {" "}
+            {this.props.task}
+          </li>
           <div>
             {" "}
             <button
