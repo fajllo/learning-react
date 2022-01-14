@@ -37,6 +37,13 @@ export default class TodoList extends Component {
         <h1>Todo list! react</h1>
         <NewTodoForm key="form" addTodo={this.create} />
         <ul className="w-full md:w-1/2">{todos}</ul>
+        <div className=" mt-10">
+          {" "}
+          <h1 className="text-4xl text-orange-400">How it works?</h1>
+          <h2 className="text-2xl">enter your todo</h2>
+          <h2 className="text-2xl">click edit to edit each todo</h2>
+          <h2 className="text-2xl">click delete to delete selected todo </h2>
+        </div>
       </div>
     );
   }

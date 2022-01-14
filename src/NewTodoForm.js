@@ -11,12 +11,11 @@ export default class NewTodoForm extends Component {
     this.props.addTodo({ ...this.state, id: uuidv4() });
     this.setState({ task: "" });
   };
- 
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="text-4xl">
           <label htmlFor="task" className="mr-2">
             New todo:
           </label>

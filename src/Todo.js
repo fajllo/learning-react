@@ -30,7 +30,7 @@ export default class Todo extends Component {
             onClick={this.toggleComplete}
             className={
               this.state.completed
-                ? "py-2 m-2 line-through text-gray-300 "
+                ? "py-2 m-2 line-through text-gray-400 "
                 : "py-2 m-2 "
             }
           >
@@ -90,6 +90,10 @@ export default class Todo extends Component {
         </div>
       );
     }
-    return <div className=" Todo flex gap-2 w-full flex-col   ">{result}</div>;
+    return (
+      <div className=" Todo flex gap-2 w-full flex-col text-2xl  ">
+        {result}
+      </div>
+    );
   }
 }
