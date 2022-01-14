@@ -43,6 +43,9 @@ export default class TodoList extends Component {
           <h2 className="text-2xl">enter your todo</h2>
           <h2 className="text-2xl">click edit to edit each todo</h2>
           <h2 className="text-2xl">click delete to delete selected todo </h2>
+          <h2 className="text-2xl">
+            click on selected todo item to mark as completed{" "}
+          </h2>
         </div>
       </div>
     );

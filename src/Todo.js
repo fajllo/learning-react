@@ -91,7 +91,7 @@ export default class Todo extends Component {
       );
     }
     return (
-      <div className=" Todo flex gap-2 w-full flex-col text-2xl  ">
+      <div className=" Todo flex gap-2 w-full flex-col text-xl  ">
         {result}
       </div>
     );
